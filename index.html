@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princess Noreen Francisco's Website</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('background.jpg'); /* Update with your image path */
+            background-size: cover;
+            background-position: center; /* Center the image */
+            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+        .container {
+            text-align: center; /* Center-align the content */
+            width: 90%; /* Make it responsive */
+            max-width: 400px; /* Max width for larger screens */
+        }
+        h1 {
+            font-size: 24px; /* Size for mobile view */
+            color: darkgreen; /* Dark green color */
+            margin-bottom: 20px; /* Space below the title */
+            text-decoration: underline; /* Underline the text */
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.7), /* Create outline effect */
+                         -1px -1px 0 rgba(0, 0, 0, 0.7),
+                         -1px 1px 0 rgba(0, 0, 0, 0.7),
+                         1px -1px 0 rgba(0, 0, 0, 0.7); /* Outline */
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block; /* Ensure the button takes full width available */
+            margin: 20px auto; /* Center the button */
+        }
+        .button:hover {
+            background-color: #15ff00;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+            opacity: 0;
+            transition: opacity 0.5s;
+            height: 50px; /* Set a fixed height */
+            overflow: hidden; /* Hide overflow text */
+            width: 100%; /* Make it responsive */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+            border-radius: 10px; /* Rounded corners for the background */
+            padding: 10px; /* Padding around the text */
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
+        }
+        .visible {
+            opacity: 1; /* Change to 1 for proper visibility */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Princess Noreen Francisco</h1> <!-- Title added here -->
+        <button class="button" onclick="showMessage()">Click Me!</button>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        const messages = [
+            "Hi Hon Goodmorningggg",
+            "How's your sleep, lalove?",
+            "Breakfasst ka ah",
+            "And uhmmmmm...ang",
+            "Ganda mo hehe",
+            "Click mo pa po",
+            "You want kiss?",
+            "All the kisses for youu MWA!",
+            "Click mo pa hon",
+            "Ako din kiss mo ehe",
+            "Sarap kisssss",
+            "Uy alam ba hon",
+            "Na pogi ako?",
+            "Why?",
+            "Kasi maganda ka HAHAHAHAHA",
+            "Anddd hon may sasabihin ako",
+            "I love youuu <3"
+        ];
+        let clickCount = 0;
+
+        function showMessage() {
+            const messageElement = document.getElementById('message');
+            messageElement.textContent = messages[clickCount % messages.length];
+            messageElement.classList.add('visible');
+            clickCount++;
+            
+            // Fade out the message after a short delay
+            setTimeout(() => {
+                messageElement.classList.remove('visible');
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>
